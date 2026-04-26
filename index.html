@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wolvel | Coming Soon</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #0F1E2E;
+      color: #ffffff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: #00C2A8;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 14px;
+      color: #cccccc;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .email-box {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="email"] {
+      padding: 12px;
+      width: 65%;
+      border: none;
+      outline: none;
+      border-radius: 6px 0 0 6px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 12px 18px;
+      border: none;
+      background: #1E90FF;
+      color: white;
+      cursor: pointer;
+      border-radius: 0 6px 6px 0;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00C2A8;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .contact {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .contact a {
+      color: #1E90FF;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">Wolvel</div>
+
+    <div class="tagline">Transforming Data into Intelligent Action</div>
+
+    <div class="description">
+      We are building a next-generation platform focused on smart systems, data-driven insights, and enterprise solutions.
+    </div>
+
+    <div class="email-box">
+      <input type="email" placeholder="Enter your email" />
+      <button onclick="notifyUser()">Notify Me</button>
+    </div>
+
+    <div class="footer">Launching Soon • 2026</div>
+
+    <div class="contact">
+      Contact: <a href="mailto:contact@wolvel.com">contact@wolvel.com</a>
+    </div>
+  </div>
+
+  <script>
+    function notifyUser() {
+      const email = document.querySelector('input').value;
+      if (!email) {
+        alert('Please enter your email');
+        return;
+      }
+      alert('Thank you! We will notify you soon.');
+    }
+  </script>
+</body>
+</html>
