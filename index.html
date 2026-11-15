@@ -74,6 +74,8 @@ section[id]{scroll-margin-top:68px}
 .seg{display:inline-flex;border:1.5px solid var(--teal);border-radius:999px;overflow:hidden;margin-bottom:20px;background:var(--surface)}
 .seg button{border:0;background:transparent;color:var(--teal);font:inherit;font-weight:600;font-size:15px;padding:10px 18px;cursor:pointer}
 .seg button[aria-pressed=true]{background:var(--teal);color:var(--on-teal)}
+.off{display:inline-block;background:var(--marigold);color:#172026;font-size:12.5px;font-weight:600;padding:1px 9px;border-radius:999px;margin-left:6px}
+.was{font-size:20px;font-weight:600;color:var(--muted);letter-spacing:0;margin-right:8px;text-decoration-thickness:2px}
 .save{display:inline-block;background:var(--marigold);color:#172026;font-size:12.5px;font-weight:600;padding:1px 10px;border-radius:999px;margin-top:6px;align-self:flex-start}
 .kc small{display:block;font-size:14px;color:var(--muted);margin-top:14px}
 .kc a{font-weight:800;font-size:20px;text-decoration:none;word-break:break-word}
@@ -128,7 +130,12 @@ html[lang=km] .card p{line-height:27px}
 
 /* prices */
 .plan{display:flex;flex-direction:column}
-.plan .size{font-weight:600;font-size:15px;color:var(--muted)}
+.plan .pname{margin:0 0 4px;font:800 22px/1.2 var(--sans);letter-spacing:-.02em}
+.plan .size{font-size:14.500px;color:var(--muted);min-height:3em;line-height:1.5}
+.trial{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;margin-bottom:16px;border:2px solid var(--teal)}
+.trial h3{margin:0 0 4px;font-size:20px}
+.trial p{font-size:15.500px;color:var(--muted);max-width:44em}
+.trial:hover{transform:none}
 .plan .price{font:800 44px/1.1 var(--sans);letter-spacing:-.03em;margin:8px 0 2px}
 .plan .per{font-size:14px;color:var(--muted)}
 .plan ul{list-style:none;padding:0;margin:16px 0 20px;font-size:15.5px}
@@ -136,6 +143,16 @@ html[lang=km] .card p{line-height:27px}
 .plan .btn{margin-top:auto}
 .plan.pop{border:2px solid var(--teal)}
 .badge{display:inline-block;background:var(--marigold);color:#172026;font-size:12.5px;font-weight:600;padding:2px 12px;border-radius:999px;margin-bottom:8px;align-self:flex-start}
+.incl{margin-top:16px}
+.incl h3{margin:0 0 12px;font-size:18px}
+.inclg{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 40px}
+.incl h4{margin:0 0 8px;font-size:15px;font-weight:800;color:var(--teal)}
+html[lang=km] .incl h4{font-weight:700}
+.incl ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:15.500px}
+.incl li{display:flex;gap:10px;align-items:flex-start}
+.incl svg{width:20px;height:20px;flex:none;margin-top:3px;fill:none;stroke:var(--teal);stroke-width:2.500;stroke-linecap:round;stroke-linejoin:round}
+html[lang=km] .incl svg{margin-top:5px}
+@media (max-width:700px){.inclg{grid-template-columns:1fr}}
 .honest{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--marigold);border-radius:10px;padding:16px 18px;font-size:15.5px}
 
 /* steps */
@@ -223,10 +240,10 @@ footer{padding:32px 0;font-size:14.5px;color:var(--muted)}
       <h1 data-i="h1">Know every guard is on post. Pay them right.</h1>
       <p class="lead" data-i="lead">Wolvel Guard replaces the attendance notebook and the payroll Excel. Guards clock in on their phone with a selfie and GPS. You see it in the office, in Khmer or English.</p>
       <div class="cta">
-        <a class="btn btn-p" href="https://guard.wolvel.com" data-i="try">Try Wolvel Guard free for 1 month</a>
+        <a class="btn btn-p" href="https://guard.wolvel.com" data-i="try">Start 30-day free trial</a>
         <a class="btn btn-s" href="#prices" data-i="see">See prices</a>
       </div>
-      <p class="fine" data-i="fine">Your first month is free. Then from $25 per month, or pay yearly and get 2 months free. KHQR or bank transfer.</p>
+      <p class="fine" data-i="fine">Free for 30 days, no card needed. Then from $25 per month, or pay yearly and save 17% (2 months free). KHQR or bank transfer.</p>
     </div>
     <div class="ba" aria-label="Before and after">
       <div>
@@ -272,7 +289,7 @@ footer{padding:32px 0;font-size:14.5px;color:var(--muted)}
       <div class="card"><div class="tile"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v7h-4M14 21v-1"/></svg></div><h3 data-i="f3t">QR patrols</h3><p data-i="f3d">Guards scan a QR code at each checkpoint. You get an alert when a round is missed.</p></div>
       <div class="card"><div class="tile"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17v.5"/></svg></div><h3 data-i="f4t">Incidents and SOS</h3><p data-i="f4d">One button on the guard's phone. The alert goes to your Telegram group.</p></div>
       <div class="card"><div class="tile"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.600-6 8-6s8 2 8 6"/></svg></div><h3 data-i="f5t">Leave, loans and advances</h3><p data-i="f5d">Guards ask for leave on the phone. Advances are paid back from payroll.</p></div>
-      <div class="card"><div class="tile"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.500"/><path d="M6.500 10v4M17.500 10v4"/></svg></div><h3 data-i="f6t">Payroll and payslips</h3><p data-i="f6d">Absence, late, overtime, NSSF and Tax on Salary are worked out for you. Payslips in Khmer and English. Bank files for ABA and ACLEDA.</p></div>
+      <div class="card"><div class="tile"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.500"/><path d="M6.500 10v4M17.500 10v4"/></svg></div><h3 data-i="f6t">Payroll and payslips</h3><p data-i="f6d">Absence, late, overtime, NSSF and Tax on Salary are worked out for you. Payslips in Khmer and English. Bank files for ABA, ACLEDA and Wing.</p></div>
       <div class="card"><div class="tile"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 17v-3M12 17v-6M15 17v-2"/></svg></div><h3 data-i="f7t">Client reports</h3><p data-i="f7d">A monthly report for each client: shifts covered, on-time, patrols, incidents. Clients can have their own login.</p></div>
       <div class="card"><div class="tile"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3 data-i="f8t">Any phone, Khmer and English</h3><p data-i="f8d">Opens in the phone's browser. Nothing to install from an app store.</p></div>
     </div>
@@ -298,10 +315,51 @@ footer{padding:32px 0;font-size:14.5px;color:var(--muted)}
     </div>
     <div class="seg" role="group" aria-label="Billing">
       <button type="button" data-b="m" aria-pressed="true" data-i="bm">Monthly</button>
-      <button type="button" data-b="y" aria-pressed="false" data-i="by">Yearly · 2 months free</button>
+      <button type="button" data-b="y" aria-pressed="false"><span data-i="by">Yearly</span> <span class="off" data-i="off">Save 17%</span></button>
+    </div>
+    <div class="card trial">
+      <div>
+        <h3 data-i="th">Free trial: $0 for 30 days</h3>
+        <p data-i="tp">Up to 80 guards and 6 office users. Try everything before you pay. No card needed.</p>
+      </div>
+      <a class="btn btn-p" href="https://guard.wolvel.com" data-i="try">Start 30-day free trial</a>
     </div>
     <div class="grid g4" id="plans"></div>
-    <p class="honest" data-i="honest">To be clear: Wolvel Guard is a monthly or yearly plan, not pay-once. Pay for a year and you pay for 10 months, not 12. Your first month is free, and you only pay if you want to continue. More than 300 guards? Talk to us.</p>
+    <div class="card incl">
+      <h3 data-i="ih">Every plan includes</h3>
+      <div class="inclg">
+        <div><h4 data-i="g0">Guard phone app</h4><ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g0_0">Android and iPhone, nothing to install from an app store</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g0_1">PIN login</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g0_2">Clock in and out with selfie and GPS, works offline</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g0_3">QR patrols</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g0_4">Incident reports with photos, and SOS</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g0_5">My roster, my leave, my payslips</span></li>
+        </ul></div>
+        <div><h4 data-i="g1">Office</h4><ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g1_0">Today attendance screen</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g1_1">Roster</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g1_2">Patrol rounds and missed-round alerts</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g1_3">Incidents</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g1_4">SOS with Telegram alerts and escalation</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g1_5">Guards, sites and clients</span></li>
+        </ul></div>
+        <div><h4 data-i="g2">HR and payroll</h4><ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g2_0">Leave, loans and salary advances</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g2_1">Allowances and fines</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g2_2">Payroll once or twice a month, with NSSF and Tax on Salary</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g2_3">Payslips in English and Khmer</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g2_4">ABA, ACLEDA and Wing bank files, and a cash list</span></li>
+        </ul></div>
+        <div><h4 data-i="g3">For your clients, in your name</h4><ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g3_0">Monthly client reports, print or PDF</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g3_1">Client logins</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g3_2">English and Khmer</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.500 4.500L19 7.500"/></svg><span data-i="g3_3">Your company's logo</span></li>
+        </ul></div>
+      </div>
+    </div>
+    <p class="honest" data-i="honest">To be clear: Wolvel Guard is a monthly or yearly plan, not pay-once. Pay for a year and you pay for 10 months, not 12. Your first 30 days are free, and you only pay if you want to continue. More than 300 guards? Talk to us.</p>
   </div>
 </section>
 
@@ -345,7 +403,7 @@ footer{padding:32px 0;font-size:14.5px;color:var(--muted)}
     <h2 data-i="xh">Stop running your guards from a notebook.</h2>
     <p data-i="xp">Open Wolvel Guard, add a few guards and see how it works for your company.</p>
     <div class="cta">
-      <a class="btn btn-p" href="https://guard.wolvel.com" data-i="try">Try Wolvel Guard free for 1 month</a>
+      <a class="btn btn-p" href="https://guard.wolvel.com" data-i="try">Start 30-day free trial</a>
       <a class="btn btn-s" id="tg" hidden data-i="tg">Chat on Telegram</a>
     </div>
   </div>
@@ -372,10 +430,10 @@ var CONTACT = {
   phone: "+855 92 428 789"
 };
 var PLANS = [
-  {price:25,  guards:30,  users:3},
-  {price:49,  guards:80,  users:6},
-  {price:89,  guards:150, users:12},
-  {price:129, guards:300, users:25}
+  {name:"Starter",  price:25,  guards:30,  users:3,  good:{en:"Small companies, 1 to 5 sites", km:"ក្រុមហ៊ុនតូច មាន ១ ទៅ ៥ ទីតាំង"}},
+  {name:"Business", price:49,  guards:80,  users:6,  good:{en:"Growing companies", km:"ក្រុមហ៊ុនកំពុងរីកចម្រើន"}},
+  {name:"Pro",      price:89,  guards:150, users:12, good:{en:"Companies with many sites and supervisors", km:"ក្រុមហ៊ុនមានទីតាំង និងប្រធានក្រុមច្រើន"}},
+  {name:"Large",    price:129, guards:300, users:25, good:{en:"Big companies, 150 to 300 guards", km:"ក្រុមហ៊ុនធំ មានសន្តិសុខ ១៥០ ទៅ ៣០០ នាក់"}}
 ];
 
 var KM = {
@@ -383,8 +441,8 @@ nav1:"មុខងារ",nav2:"តម្លៃ",nav3:"សំណួរ",nav4:"�
 eyebrow:"សម្រាប់ក្រុមហ៊ុនសន្តិសុខនៅកម្ពុជា",
 h1:"ដឹងថាសន្តិសុខគ្រប់រូបនៅប៉ុស្តិ៍។ បើកប្រាក់ខែត្រឹមត្រូវ។",
 lead:"Wolvel Guard ជំនួសសៀវភៅវត្តមាន និង Excel ប្រាក់ខែ។ សន្តិសុខចូលវេនតាមទូរស័ព្ទ ដោយថតរូប និង GPS។ អ្នកមើលឃើញភ្លាមៗនៅការិយាល័យ ជាភាសាខ្មែរ ឬអង់គ្លេស។",
-try:"សាកប្រើ Wolvel Guard ឥតគិតថ្លៃ ១ ខែ",see:"មើលតម្លៃ",
-fine:"ខែដំបូងឥតគិតថ្លៃ។ បន្ទាប់មកចាប់ពី $25 ក្នុងមួយខែ ឬបង់ប្រចាំឆ្នាំ ឥតគិតថ្លៃ ២ ខែ។ បង់តាម KHQR ឬផ្ទេរប្រាក់តាមធនាគារ។",
+try:"សាកប្រើឥតគិតថ្លៃ ៣០ ថ្ងៃ",see:"មើលតម្លៃ",
+fine:"ឥតគិតថ្លៃ ៣០ ថ្ងៃ មិនបាច់ប្រើកាត។ បន្ទាប់មកចាប់ពី $25 ក្នុងមួយខែ ឬបង់ប្រចាំឆ្នាំ សន្សំ 17% (ឥតគិតថ្លៃ ២ ខែ)។ បង់តាម KHQR ឬផ្ទេរប្រាក់តាមធនាគារ។",
 before:"ពីមុន",after:"ជាមួយ Wolvel Guard",
 n1:"សុខា – ម៉ោង ៦?",n2:"តារា – អត់មក??",n3:"ប៉ុស្តិ៍ ៣ – អ្នកណាយាម?",n4:"បើកមុន $20",n5:"សងហើយ ឬនៅ?",n6:"ថែមម៉ោង – សួរវុទ្ធី",
 today:"ថ្ងៃនេះ",s1:"នៅប៉ុស្តិ៍",s2:"មកយឺត",s3:"អត់មក",
@@ -397,7 +455,7 @@ f2t:"តារាងវេន",f2d:"រៀបថាអ្នកណាយាម�
 f3t:"ល្បាតដោយស្កេន QR",f3d:"សន្តិសុខស្កេន QR នៅចំណុចនីមួយៗ។ បើខកល្បាត អ្នកទទួលដំណឹងភ្លាម។",
 f4t:"ហេតុការណ៍ និង SOS",f4d:"ចុចតែម្តងលើទូរស័ព្ទសន្តិសុខ។ ដំណឹងចូលក្រុម Telegram របស់អ្នក។",
 f5t:"ច្បាប់ឈប់ ប្រាក់កម្ចី និងប្រាក់បើកមុន",f5d:"សន្តិសុខសុំច្បាប់តាមទូរស័ព្ទ។ ប្រាក់បើកមុនកាត់សងពីប្រាក់ខែ។",
-f6t:"ប្រាក់ខែ និងប័ណ្ណប្រាក់ខែ",f6d:"អវត្តមាន មកយឺត ថែមម៉ោង ប.ស.ស. និងពន្ធលើប្រាក់បៀវត្ស គណនាឱ្យរួច។ ប័ណ្ណប្រាក់ខែជាខ្មែរ និងអង់គ្លេស។ មានឯកសារសម្រាប់ ABA និង ACLEDA។",
+f6t:"ប្រាក់ខែ និងប័ណ្ណប្រាក់ខែ",f6d:"អវត្តមាន មកយឺត ថែមម៉ោង ប.ស.ស. និងពន្ធលើប្រាក់បៀវត្ស គណនាឱ្យរួច។ ប័ណ្ណប្រាក់ខែជាខ្មែរ និងអង់គ្លេស។ មានឯកសារសម្រាប់ ABA, ACLEDA និង Wing។",
 f7t:"របាយការណ៍ជូនអតិថិជន",f7d:"របាយការណ៍ប្រចាំខែសម្រាប់អតិថិជននីមួយៗ៖ វេនដែលបានយាម ការមកទាន់ម៉ោង ល្បាត និងហេតុការណ៍។ អតិថិជនអាចមានគណនីចូលមើលផ្ទាល់ខ្លួន។",
 f8t:"ទូរស័ព្ទអ្វីក៏បាន ខ្មែរ និងអង់គ្លេស",f8d:"បើកក្នុង browser របស់ទូរស័ព្ទ។ មិនបាច់ដំឡើងកម្មវិធីអ្វីទេ។",
 wh:"មនុស្សបីនាក់ អេក្រង់ងាយៗបី",
@@ -406,8 +464,9 @@ w2t:"សន្តិសុខ",w2d:"ចូលដោយលេខ PIN។ ចូល
 w3t:"អតិថិជនរបស់អ្នក",w3d:"ឃើញតែរបាយការណ៍ប្រចាំខែ ដែលអ្នកសម្រេចចែករំលែក។",
 ph:"តម្លៃងាយយល់។ គ្រប់គម្រោងមានមុខងារដូចគ្នា។",
 pp:"ជ្រើសតាមចំនួនសន្តិសុខរបស់អ្នក។ បង់ប្រចាំខែ ឬប្រចាំឆ្នាំ តាម KHQR ឬផ្ទេរប្រាក់តាមធនាគារ។",
-bm:"ប្រចាំខែ",by:"ប្រចាំឆ្នាំ · ឥតគិតថ្លៃ ២ ខែ",
-honest:"សូមបញ្ជាក់៖ Wolvel Guard គិតថ្លៃប្រចាំខែ ឬប្រចាំឆ្នាំ មិនមែនបង់តែម្តងទេ។ បើបង់ប្រចាំឆ្នាំ អ្នកបង់តែ ១០ ខែ ប្រើបាន ១២ ខែ។ ខែដំបូងឥតគិតថ្លៃ ហើយអ្នកបង់ប្រាក់តែពេលចង់ប្រើបន្ត។ មានសន្តិសុខលើស ៣០០ នាក់? សូមទាក់ទងយើង។",
+ih:"គ្រប់គម្រោងមាន",th:"សាកប្រើឥតគិតថ្លៃ៖ $0 សម្រាប់ ៣០ ថ្ងៃ",tp:"ប្រើបានដល់សន្តិសុខ ៨០ នាក់ និងអ្នកប្រើការិយាល័យ ៦ នាក់។ សាកគ្រប់មុខងារមុនពេលបង់ប្រាក់។ មិនបាច់ប្រើកាត។",g0:"កម្មវិធីទូរស័ព្ទសន្តិសុខ",g0_0:"Android និង iPhone មិនបាច់ដំឡើងពី app store",g0_1:"ចូលដោយលេខ PIN",g0_2:"ចូល និងចេញវេនដោយថតរូប និង GPS ដាច់អ៊ីនធឺណិតក៏ប្រើបាន",g0_3:"ល្បាតដោយស្កេន QR",g0_4:"របាយការណ៍ហេតុការណ៍មានរូបថត និង SOS",g0_5:"តារាងវេន ច្បាប់ឈប់ និងប័ណ្ណប្រាក់ខែរបស់ខ្លួន",g1:"ការិយាល័យ",g1_0:"អេក្រង់វត្តមានថ្ងៃនេះ",g1_1:"តារាងវេន",g1_2:"ជុំល្បាត និងដំណឹងពេលខកល្បាត",g1_3:"ហេតុការណ៍",g1_4:"SOS មានដំណឹងតាម Telegram និងបន្តទៅថ្នាក់លើ",g1_5:"សន្តិសុខ ទីតាំង និងអតិថិជន",g2:"បុគ្គលិក និងប្រាក់ខែ",g2_0:"ច្បាប់ឈប់ ប្រាក់កម្ចី និងប្រាក់បើកមុន",g2_1:"ប្រាក់ឧបត្ថម្ភ និងការពិន័យ",g2_2:"បើកប្រាក់ខែមួយខែម្តង ឬពីរដង មាន ប.ស.ស. និងពន្ធលើប្រាក់បៀវត្ស",g2_3:"ប័ណ្ណប្រាក់ខែជាខ្មែរ និងអង់គ្លេស",g2_4:"ឯកសារធនាគារ ABA, ACLEDA និង Wing និងបញ្ជីបើកសាច់ប្រាក់",g3:"សម្រាប់អតិថិជន ក្នុងនាមក្រុមហ៊ុនអ្នក",g3_0:"របាយការណ៍ប្រចាំខែជូនអតិថិជន បោះពុម្ព ឬ PDF",g3_1:"គណនីចូលមើលសម្រាប់អតិថិជន",g3_2:"ខ្មែរ និងអង់គ្លេស",g3_3:"ឡូហ្គោក្រុមហ៊ុនរបស់អ្នក",
+bm:"ប្រចាំខែ",by:"ប្រចាំឆ្នាំ",off:"សន្សំ 17%",
+honest:"សូមបញ្ជាក់៖ Wolvel Guard គិតថ្លៃប្រចាំខែ ឬប្រចាំឆ្នាំ មិនមែនបង់តែម្តងទេ។ បើបង់ប្រចាំឆ្នាំ អ្នកបង់តែ ១០ ខែ ប្រើបាន ១២ ខែ។ ៣០ ថ្ងៃដំបូងឥតគិតថ្លៃ ហើយអ្នកបង់ប្រាក់តែពេលចង់ប្រើបន្ត។ មានសន្តិសុខលើស ៣០០ នាក់? សូមទាក់ទងយើង។",
 sh:"ចាប់ផ្តើមក្នុង ៣ ជំហាន",
 s1t:"បង្កើតគណនីក្រុមហ៊ុននៅ guard.wolvel.com។",s2t:"បញ្ចូលអតិថិជន ទីតាំង និងសន្តិសុខ។",s3t:"សន្តិសុខចូលវេនតាមទូរស័ព្ទ។ អ្នកតាមដានពីការិយាល័យ។",
 qh:"សំណួរដែលម្ចាស់ក្រុមហ៊ុនសួរញឹកញាប់",
@@ -425,8 +484,8 @@ nav5:"ទាក់ទងយើង",kh:"ទាក់ទងយើង",kp:"សួ�
 foot:"Wolvel · រាជធានីភ្នំពេញ ប្រទេសកម្ពុជា · © 2026"
 };
 var T = {
- en:{per:"per month",pery:"per year",save:"Pay 10 months, use 12",guards:function(n){return "Up to "+n+" active guards"},users:function(n){return n+" office users"},all:"All features",choose:"Start 1 month free",size:function(n){return "Up to "+n+" guards"}},
- km:{per:"ក្នុងមួយខែ",pery:"ក្នុងមួយឆ្នាំ",save:"បង់ ១០ ខែ ប្រើបាន ១២ ខែ",guards:function(n){return "សន្តិសុខសកម្មរហូតដល់ "+n+" នាក់"},users:function(n){return "អ្នកប្រើការិយាល័យ "+n+" នាក់"},all:"មុខងារទាំងអស់",choose:"ចាប់ផ្តើមឥតគិតថ្លៃ ១ ខែ",size:function(n){return "សន្តិសុខដល់ "+n+" នាក់"}}
+ en:{per:"per month",pery:"per year",save:function(n){return "Save $"+n+" · 2 months free"},guards:function(n){return "Up to "+n+" active guards"},users:function(n){return n+" office users"},all:"All features",choose:"Start free trial",size:function(n){return "Up to "+n+" guards"}},
+ km:{per:"ក្នុងមួយខែ",pery:"ក្នុងមួយឆ្នាំ",save:function(n){return "សន្សំ $"+n+" · ឥតគិតថ្លៃ ២ ខែ"},guards:function(n){return "សន្តិសុខសកម្មរហូតដល់ "+n+" នាក់"},users:function(n){return "អ្នកប្រើការិយាល័យ "+n+" នាក់"},all:"មុខងារទាំងអស់",choose:"សាកប្រើឥតគិតថ្លៃ",size:function(n){return "សន្តិសុខដល់ "+n+" នាក់"}}
 };
 
 var EN = {};
@@ -438,10 +497,11 @@ function plans(lang){
   var t = T[lang], box = document.getElementById("plans"); box.textContent = "";
   PLANS.forEach(function(p){
     var d = document.createElement("div"); d.className = "card plan";
-    d.innerHTML = '<div class="size"></div><div class="price">$'+(BILL==="y"?p.price*10:p.price)+'</div><div class="per"></div>'+(BILL==="y"?'<span class="save"></span>':'')+'<ul><li></li><li></li><li></li></ul><a class="btn btn-s" href="https://guard.wolvel.com"></a>';
-    d.querySelector(".size").textContent = t.size(p.guards);
+    d.innerHTML = '<h3 class="pname"></h3><div class="size"></div><div class="price">'+(BILL==="y"?'<s class="was">$'+(p.price*12).toLocaleString("en-US")+'</s>$'+(p.price*10).toLocaleString("en-US"):'$'+p.price)+'</div><div class="per"></div>'+(BILL==="y"?'<span class="save"></span>':'')+'<ul><li></li><li></li><li></li></ul><a class="btn btn-s" href="https://guard.wolvel.com"></a>';
+    d.querySelector(".pname").textContent = p.name;
+    d.querySelector(".size").textContent = p.good[lang];
     d.querySelector(".per").textContent = BILL==="y" ? t.pery : t.per;
-    if(BILL==="y") d.querySelector(".save").textContent = t.save;
+    if(BILL==="y") d.querySelector(".save").textContent = t.save(p.price*2);
     var li = d.querySelectorAll("li");
     li[0].textContent = t.guards(p.guards); li[1].textContent = t.users(p.users); li[2].textContent = t.all;
     d.querySelector("a").textContent = t.choose;
